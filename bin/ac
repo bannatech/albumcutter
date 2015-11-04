@@ -1,0 +1,32 @@
+#!/usr/bin/env python2
+import pyperclip
+from albumcutter import AlbumCutter
+from optparse import OptionParser
+
+def main():
+	options, args = parsearg()
+	if len(args) == 0:
+		print("Missing URL.")
+		return
+	t = get_tracklist()
+
+	AlbumCutter(args[0], t, options.dir)
+
+def parsearg():
+	parser = OptionParser()
+
+	parser.add_option("-d", dest="dir", default="album",
+	                  help="Destination album", metavar="<dir>")
+
+	return parser.parse_args()
+
+def get_tracklist():
+	while 1:
+		print("Using tracklist in clipboard:")
+		print(pyperclip.paste())
+		if raw_input("\n[y/n]:") != 'n': break
+
+	return pyperclip.paste()
+
+if __name__ == "__main__":
+	main()
