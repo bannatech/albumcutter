@@ -137,7 +137,7 @@ class AlbumCutter:
 
 	# Exports tracks into specified directory
 	def export( self, directory ):
-		assert(self.tracks != None)
+		assert(self.tracks != None and self.audio != None)
 		# Loop through tracks and process them
 		for track in self.tracks:
 			print("Processing track: '{}'".format(track['title']))
