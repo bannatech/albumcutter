@@ -10,13 +10,16 @@ def main():
 		return
 	t = get_tracklist()
 
-	AlbumCutter(args[0], t, options.dir)
+	AlbumCutter(args[0], t, options.dir, resume=options.resume)
 
 def parsearg():
 	parser = OptionParser()
 
 	parser.add_option("-d", dest="dir", default="album",
 	                  help="Destination album", metavar="<dir>")
+
+	parser.add_option("-r", "--resume", dest="resume", action="store_true",
+	                  default=False, help="assumes file is already downloaded")
 
 	return parser.parse_args()
 
