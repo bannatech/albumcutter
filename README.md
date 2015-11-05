@@ -13,6 +13,29 @@ your clipboard and invoke the command like so:
 `ac` will ask you to confirm the contents of the clipboard in case you made a
 mistake.
 
+In this example, you can rip the tracklist off of the video description. (pasted below for reference):
+
+    1. Cipher 0:00
+    2. Who Likes to Party 3:51
+    3. Scheming Weasel (faster version) 8:09
+    4. Sneaky Snitch 9:38
+    5. Wallpaper 11:55
+    6. Spazzmatica Polka 15:35
+    7. Pixel Peeker Polka - faster 17:10
+    8. Gaslamp Funworks 20:33
+    9. Merry Go 23:01
+    10. Fluffing a Duck 25:02
+    11.Hall of the Mountain King 26:09
+    12. Cut and Run 28:42
+    13. Mechanolith 32:17
+    14. Killing Time 33:12
+    15. At Rest 36:36
+    16. Pop Goes the Weasel 40:03
+    17. The House of Leaves 41:12
+    18. There It Is 44:38
+    19. Sovereign 45:28
+    20. Heartbreaking 51:21 - 52:56
+
 ## dependencies
 
  * Python 2.7
