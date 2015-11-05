@@ -38,7 +38,7 @@ class AlbumCutter:
 			print("ERROR: Could not make directory ({})".format(output))
 			return
 
-		assert self.get_audio(self.url)
+		assert(self.get_audio(self.url))
 		self.process_tracklist(self.tracklist)
 		self.export(self.output)
 
@@ -48,7 +48,7 @@ class AlbumCutter:
 		# youtube-dl -q -x -o$(output)/$(VIDEO ID).$(EXTENSION)
 		if not call(['youtube-dl', '-q', '-x',
 		             '-o{}/%(id)s.%(ext)s'.format(self.output), url]):
-			return False
+			return(False)
 
 		# This second call here finds the filename for the audio just downloaded
 		# It's not elegant at all, and it was the best solution I could find.
@@ -62,7 +62,7 @@ class AlbumCutter:
 
 		if err != '':
 			print(err)
-			return False
+			return(False)
 
 		# Loads file into the fancy manipulator thingmajig I found on the web
 		print("Trying to load file ({})".format(output))
@@ -113,13 +113,13 @@ class AlbumCutter:
 		try:
 			second = int(second)
 		except:
-			return None
+			return(None)
 		#             ms in hour        ms in minute        ms in second
-		return (hour * 3600000) + (minute * 60000) + (second * 1000)
+		return((hour * 3600000) + (minute * 60000) + (second * 1000))
 
 	# Exports tracks into specified directory
 	def export( self, directory ):
-		assert self.tracks != None
+		assert(self.tracks != None)
 		# Loop through tracks and process them
 		for track in self.tracks:
 			print("Processing track: '{}'".format(track['title']))
